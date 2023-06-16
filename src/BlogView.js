@@ -1,20 +1,14 @@
 import moment from "moment";
 
-function BlogView({ title, date, decodedUrl, content }) {
+function BlogView({ title, date, imgUrl, content, alt }) {
   const formattedDate = moment(date).format("MMMM Do, YYYY");
-  let imageExists = false;
-  if (decodedUrl.split("").length > 1) {
-    imageExists = true;
-  } else {
-    imageExists = false;
-  }
-
+  let text = content.split("%!P");
   return (
     <div>
       <h1>{title}</h1>
       <p>Last edited: {formattedDate}</p>
-      {imageExists ? <img src={decodedUrl} alt={title}></img> : <></>}
-      {content.map((paragraph, index) => (
+      <img src={imgUrl} alt={alt} />
+      {text.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
     </div>

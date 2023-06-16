@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import BlogForm from "./BlogForm";
-import he from "he";
+
 const AuthorPage = () => {
   const [blogs, setBlogs] = useState([]);
   const [createStatus, setCreateStatus] = useState(false);
   const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [alt, setAlt] = useState("");
   const [text, setText] = useState("");
   const [published, setPublished] = useState(false);
   const [responseData, setResponseData] = useState(null);
   const [errorArray, setErrorArray] = useState([]);
-  const navigate = useNavigate();
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -37,7 +39,7 @@ const AuthorPage = () => {
 
   function handleCreateClick() {
     setCreateStatus(!createStatus);
-
+    setDesc("");
     setTitle("");
     setImgUrl("");
     setText("");
@@ -53,14 +55,15 @@ const AuthorPage = () => {
         },
       };
 
-      console.log(published);
       axios
         .post(
           "http://localhost:3000/author/blog",
           {
             author: blogs.author,
             title: title,
-            image: decodedUrl,
+            desc: desc,
+            image: imgUrl,
+            alt: alt,
             content: text,
             published: published,
           },
@@ -78,7 +81,6 @@ const AuthorPage = () => {
         });
     }
   };
-  const decodedUrl = he.decode(imgUrl);
 
   return (
     <>
@@ -92,8 +94,12 @@ const AuthorPage = () => {
                 handleSubmit={handleSubmit}
                 title={title}
                 setTitle={setTitle}
+                desc={desc}
+                setDesc={setDesc}
                 imgUrl={imgUrl}
                 setImgUrl={setImgUrl}
+                alt={alt}
+                setAlt={setAlt}
                 text={text}
                 setText={setText}
                 published={published}

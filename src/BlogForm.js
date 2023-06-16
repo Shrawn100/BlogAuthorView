@@ -4,12 +4,16 @@ function BlogForm({
   handleSubmit,
   title,
   setTitle,
+  desc,
+  setDesc,
   imgUrl,
   setImgUrl,
   text,
   setText,
   published,
   setPublished,
+  alt,
+  setAlt,
 }) {
   let decodedUrl = "";
   if (imgUrl) {
@@ -28,6 +32,15 @@ function BlogForm({
         />
       </div>
       <div>
+        <label htmlFor="desc">Description:</label>
+        <input
+          type="text"
+          id="desc"
+          value={desc ? desc : ""}
+          onChange={(e) => setDesc(e.target.value)}
+        />
+      </div>
+      <div>
         <label htmlFor="imgUrl">Image URL:</label>
         <input
           type="text"
@@ -37,7 +50,16 @@ function BlogForm({
         />
       </div>
       <div>
-        <label htmlFor="text">Text:</label>
+        <label htmlFor="alt">Image Alt:</label>
+        <input
+          type="text"
+          id="alt"
+          value={alt ? alt : ""}
+          onChange={(e) => setAlt(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="text">Content:</label>
         <textarea
           id="text"
           value={text ? text : ""}
