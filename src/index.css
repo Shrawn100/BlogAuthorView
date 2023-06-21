@@ -41,6 +41,7 @@ code {
   margin: 0;
   word-wrap: break-word; /* Add this to allow long words to break */
   overflow-wrap: break-word;
+  font-family: "Roboto Flex";
 }
 @media (max-width: 1200px) {
   .blog-container {
