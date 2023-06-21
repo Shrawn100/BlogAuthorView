@@ -21,52 +21,56 @@ function BlogForm({
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          value={title ? title : ""}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="desc">Description:</label>
-        <input
-          type="text"
-          id="desc"
-          value={desc ? desc : ""}
-          onChange={(e) => setDesc(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="imgUrl">Image URL:</label>
-        <input
-          type="text"
-          id="imgUrl"
-          value={decodedUrl ? decodedUrl : ""}
-          onChange={(e) => setImgUrl(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="alt">Image Alt:</label>
-        <input
-          type="text"
-          id="alt"
-          value={alt ? alt : ""}
-          onChange={(e) => setAlt(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="text">Content:</label>
-        <textarea
-          id="text"
-          value={text ? text : ""}
-          onChange={(e) => setText(e.target.value)}
-        ></textarea>
-      </div>
-      <div>
+    <form className="blog-form" onSubmit={handleSubmit}>
+      <label htmlFor="title">Title:</label>
+      <input
+        placeholder="Why sports are exciting"
+        required
+        type="text"
+        id="title"
+        value={title ? title : ""}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+
+      <label htmlFor="desc">Description:</label>
+      <input
+        placeholder="This blogs talks about sports"
+        required
+        type="text"
+        id="desc"
+        value={desc ? desc : ""}
+        onChange={(e) => setDesc(e.target.value)}
+      />
+
+      <label htmlFor="imgUrl">Image URL:</label>
+      <input
+        placeholder="www.image/soccerball.com"
+        required
+        type="text"
+        id="imgUrl"
+        value={decodedUrl ? decodedUrl : ""}
+        onChange={(e) => setImgUrl(e.target.value)}
+      />
+
+      <label htmlFor="alt">Image Alt:</label>
+      <input
+        placeholder="Soccer ball"
+        required
+        type="text"
+        id="alt"
+        value={alt ? alt : ""}
+        onChange={(e) => setAlt(e.target.value)}
+      />
+
+      <label htmlFor="text">Content:</label>
+      <textarea
+        placeholder="Note: You can seperate content into paragraphs by using delimiter: %!P"
+        required
+        id="text"
+        value={text ? text : ""}
+        onChange={(e) => setText(e.target.value)}
+      ></textarea>
+      <div className="form-select">
         <label htmlFor="published">Published:</label>
         <input
           type="checkbox"
@@ -75,6 +79,7 @@ function BlogForm({
           onChange={(e) => setPublished(e.target.checked)}
         />
       </div>
+
       <button type="submit">Submit</button>
     </form>
   );

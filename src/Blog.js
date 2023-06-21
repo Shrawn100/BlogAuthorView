@@ -135,14 +135,17 @@ function Blog() {
             <>
               <div>
                 {confirmation ? (
-                  <>
+                  <div className="delete-blog">
                     <h1>Are you sure?</h1>
                     <button onClick={handleDelete}>Yes</button>
                     <button onClick={handleDeleteClick}>No</button>
-                  </>
+                  </div>
                 ) : (
                   <>
-                    <button onClick={handleEditClick}>Cancel</button>
+                    <div className="author-blog-container">
+                      <button onClick={handleEditClick}>Cancel</button>
+                      <button onClick={handleDeleteClick}>Delete Blog</button>
+                    </div>
                     <BlogForm
                       handleSubmit={handleSubmit}
                       title={title}
@@ -158,7 +161,7 @@ function Blog() {
                       published={published}
                       setPublished={setPublished}
                     ></BlogForm>
-                    <button onClick={handleDeleteClick}>Delete Blog</button>
+
                     {errorArray.map((error) => (
                       <div>{error.msg}</div>
                     ))}
@@ -168,17 +171,19 @@ function Blog() {
             </>
           ) : (
             <>
-              <div>
-                <Link to="/author">Go Back</Link>
+              <div className="author-blog-container">
+                <Link className="go-back" to="/author">
+                  Home
+                </Link>
                 <button onClick={handleEditClick}>Edit</button>
-                <BlogView
-                  title={title}
-                  date={date}
-                  imgUrl={imgUrl}
-                  content={text}
-                  alt={alt}
-                ></BlogView>
               </div>
+              <BlogView
+                title={title}
+                date={date}
+                imgUrl={imgUrl}
+                content={text}
+                alt={alt}
+              ></BlogView>
             </>
           )}
         </>

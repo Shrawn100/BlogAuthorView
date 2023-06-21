@@ -57,27 +57,25 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={username}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={handleInputChange}
-        />
-      </div>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <label htmlFor="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        value={username}
+        onChange={handleInputChange}
+      />
+
+      <label htmlFor="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        value={password}
+        onChange={handleInputChange}
+      />
+
       <button type="submit">Login</button>
       {errors.length > 0 && (
         <div>

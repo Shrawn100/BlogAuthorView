@@ -81,6 +81,14 @@ const AuthorPage = () => {
         });
     }
   };
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedDate = new Date(dateString).toLocaleDateString(
+      undefined,
+      options
+    );
+    return formattedDate;
+  };
 
   return (
     <>
@@ -88,8 +96,13 @@ const AuthorPage = () => {
         <>
           {createStatus ? (
             <>
-              <button onClick={handleCreateClick}>Go back</button>
-              <h1>Create Blog</h1>
+              <div className="btn-container">
+                <button className="create-btn" onClick={handleCreateClick}>
+                  Cancel
+                </button>
+              </div>
+
+              <h1 className="blog-form-heading">Create Blog</h1>
               <BlogForm
                 handleSubmit={handleSubmit}
                 title={title}
@@ -111,12 +124,36 @@ const AuthorPage = () => {
             </>
           ) : (
             <>
-              <button onClick={handleCreateClick}>Create new blog</button>
-              {blogs.map((blog) => (
-                <div key={blog.id}>
-                  <Link to={`/author/${blog._id}`}>{blog.title}</Link>
-                </div>
-              ))}
+              <div className="btn-container">
+                <Link className="sign-out" to="/">
+                  Logout
+                </Link>
+                <button className="create-btn" onClick={handleCreateClick}>
+                  Create a new blog
+                </button>
+              </div>
+              <div className="article-container">
+                {blogs.map((blog) => (
+                  <Link
+                    className="blog-article-container"
+                    key={blog.id}
+                    to={`/author/${blog._id}`}
+                  >
+                    <img
+                      className="article-image"
+                      src={blog.image}
+                      alt={blog.alt}
+                    ></img>
+
+                    <div className="blog-info">
+                      <h1 className="blog-info-heading">{blog.title}</h1>
+                      <p>{blog.desc}</p>
+
+                      <p>Published on: {formatDate(blog.date)}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </>
           )}
         </>
