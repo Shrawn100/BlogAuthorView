@@ -57,38 +57,43 @@ const Form = () => {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        value={username}
-        onChange={handleInputChange}
-      />
+    <>
+      <div className="login-header">
+        <h1>Author Login</h1>
+      </div>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={username}
+          onChange={handleInputChange}
+        />
 
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        value={password}
-        onChange={handleInputChange}
-      />
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={handleInputChange}
+        />
 
-      <button type="submit">Login</button>
-      {errors.length > 0 && (
-        <div>
-          <p>Errors:</p>
-          <ul>
-            {errors.map((error, index) => (
-              <li key={index}>{error.msg}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-      {message && <p>{message}</p>}
-    </form>
+        <button type="submit">Login</button>
+        {errors.length > 0 && (
+          <div>
+            <p>Errors:</p>
+            <ul>
+              {errors.map((error, index) => (
+                <li key={index}>{error.msg}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {message && <p>{message}</p>}
+      </form>
+    </>
   );
 };
 

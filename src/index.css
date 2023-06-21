@@ -73,11 +73,15 @@ code {
   color: black;
   width: 100%;
   max-width: 800px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.blog-article-container:hover {
+  transform: scale(0.99);
 }
 .article-image {
-  width: 50vw;
-  max-height: 400px;
-  max-width: 400px;
+  width: 100%;
+
+  max-width: 300px;
 }
 .blog-info {
   padding: 20px;
@@ -90,6 +94,7 @@ code {
   padding-bottom: 5px;
   text-align: start;
   width: 100%;
+  font-family: "Acme";
 }
 .btn-container {
   display: flex;
@@ -104,6 +109,9 @@ code {
   font-weight: bold;
   text-decoration: none;
 }
+.sign-out:hover {
+  transform: scale(0.97);
+}
 .create-btn {
   width: 50vw;
 
@@ -115,9 +123,32 @@ code {
   background-color: white;
 }
 .create-btn:hover {
+  transform: scale(0.97);
+}
+.create-btn:hover {
   cursor: pointer;
 }
 
+@media (max-width: 800px) {
+  .blog-article-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .article-image {
+    width: 100%;
+
+    max-width: none;
+  }
+  .blog-info {
+    box-sizing: border-box;
+    padding: 20px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
 /* Blog Form */
 .blog-form-heading {
   text-align: center;
@@ -193,11 +224,15 @@ code {
 }
 .author-blog-container > button:hover {
   cursor: pointer;
+  transform: scale(0.975);
 }
 .go-back {
   color: black;
   text-decoration: none;
   font-weight: bold;
+}
+.go-back:hover {
+  transform: scale(0.97);
 }
 
 /* Delete Blog Confirmation */
@@ -220,9 +255,17 @@ code {
 }
 
 /* login form */
-
+.login-header {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.login-header > h1 {
+  font-size: 40px;
+  padding-bottom: 10px;
+}
 .login-form {
-  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
