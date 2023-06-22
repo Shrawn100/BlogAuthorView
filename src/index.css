@@ -80,21 +80,26 @@ code {
 }
 .article-image {
   width: 100%;
-
-  max-width: 300px;
+  max-height: 300px;
 }
 .blog-info {
   padding: 20px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
 }
 .blog-info-heading {
   color: black;
+  font-size: 22px;
   text-decoration: none;
   padding-bottom: 5px;
   text-align: start;
   width: 100%;
   font-family: "Acme";
+}
+.blog-info-date {
+  font-weight: bold;
 }
 .btn-container {
   display: flex;

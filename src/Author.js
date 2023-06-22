@@ -147,9 +147,11 @@ const AuthorPage = () => {
 
                     <div className="blog-info">
                       <h1 className="blog-info-heading">{blog.title}</h1>
-                      <p>{blog.desc}</p>
+                      <p className="blog-info-content">{blog.desc}</p>
 
-                      <p>Published on: {formatDate(blog.date)}</p>
+                      <p className="blog-info-date">
+                        Published on: {formatDate(blog.date)}
+                      </p>
                     </div>
                   </Link>
                 ))}
