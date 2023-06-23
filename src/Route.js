@@ -5,7 +5,7 @@ import AuthorPage from "./Author";
 import Blog from "./Blog";
 function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/BlogAuthorView">
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/author" element={<AuthorPage />} />
