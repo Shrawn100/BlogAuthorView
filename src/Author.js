@@ -25,7 +25,7 @@ const AuthorPage = () => {
       };
 
       axios
-        .get("http://localhost:3000/author", config)
+        .get("https://blogapi-production-9a30.up.railway.app/author", config)
         .then((response) => {
           console.log(response);
           setBlogs(response.data);
@@ -57,7 +57,7 @@ const AuthorPage = () => {
 
       axios
         .post(
-          "http://localhost:3000/author/blog",
+          "https://blogapi-production-9a30.up.railway.app/author/blog",
           {
             author: blogs.author,
             title: title,

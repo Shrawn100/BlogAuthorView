@@ -29,10 +29,13 @@ const Form = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/login", {
-        username: username,
-        password: password,
-      });
+      const response = await axios.post(
+        "https://blogapi-production-9a30.up.railway.app/login",
+        {
+          username: username,
+          password: password,
+        }
+      );
       const { message, errors, token } = response.data;
 
       if (errors) {

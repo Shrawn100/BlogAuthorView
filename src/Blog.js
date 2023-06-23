@@ -34,7 +34,7 @@ function Blog() {
             },
           };
           const response = await axios.get(
-            `http://localhost:3000/author/${id}`,
+            `https://blogapi-production-9a30.up.railway.app/author/${id}`,
             config
           );
           setResponseData(response.data);
@@ -70,7 +70,7 @@ function Blog() {
 
       axios
         .put(
-          `http://localhost:3000/author/${id}`,
+          `https://blogapi-production-9a30.up.railway.app/author/${id}`,
           {
             author: author,
             title: title,
@@ -113,7 +113,7 @@ function Blog() {
           },
         };
         const response = await axios.delete(
-          `http://localhost:3000/author/${id}`,
+          `https://blogapi-production-9a30.up.railway.app/author/${id}`,
           config
         );
         console.log("Delete request successful:", response.data);
