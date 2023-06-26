@@ -24,6 +24,11 @@ const Form = () => {
       setPassword(value);
     }
   };
+  const handleLogin = async () => {
+    // Handle login with test user
+    setUsername("testUser");
+    setPassword("testUser");
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -84,6 +89,9 @@ const Form = () => {
         />
 
         <button type="submit">Login</button>
+        <button type="button" onClick={handleLogin}>
+          Login with Test User
+        </button>
         {errors.length > 0 && (
           <div>
             <p>Errors:</p>
