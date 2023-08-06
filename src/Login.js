@@ -59,7 +59,11 @@ const LoginForm = () => {
 
   return (
     <div className="login-page-container">
-      <div className="login-page-img"></div>
+      <img
+        className="login-page-img"
+        src="https://images.pexels.com/photos/358457/pexels-photo-358457.jpeg"
+        alt="Rainforest waterfall"
+      ></img>
       <div className="login-page-content">
         <h1>Jump back into creativity</h1>
         <form className="login-form" onSubmit={handleSubmit}>
