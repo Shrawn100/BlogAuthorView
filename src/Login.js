@@ -65,7 +65,7 @@ const LoginForm = () => {
         alt="Rainforest waterfall"
       ></img>
       <div className="login-page-content">
-        <h1>Jump back into creativity</h1>
+        <h1 className="login-header">Author Hub</h1>
         <form className="login-form" onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
           <input
