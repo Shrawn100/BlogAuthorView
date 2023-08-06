@@ -1,15 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-function App() {
-  return (
-    <div>
-      <Form></Form>
-    </div>
-  );
-}
 
-const Form = () => {
+const LoginForm = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -108,4 +101,4 @@ const Form = () => {
   );
 };
 
-export default App;
+export default LoginForm;

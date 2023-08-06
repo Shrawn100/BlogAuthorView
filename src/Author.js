@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import BlogForm from "./BlogForm";
-
+import { useNavigate } from "react-router-dom";
 const AuthorPage = () => {
   const [blogs, setBlogs] = useState([]);
   const [createStatus, setCreateStatus] = useState(false);
@@ -14,6 +14,7 @@ const AuthorPage = () => {
   const [published, setPublished] = useState(false);
   const [responseData, setResponseData] = useState(null);
   const [errorArray, setErrorArray] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -34,6 +35,8 @@ const AuthorPage = () => {
         .catch((error) => {
           console.error("Error fetching author's blogs:", error);
         });
+    } else {
+      navigate("/");
     }
   }, [createStatus]);
 
