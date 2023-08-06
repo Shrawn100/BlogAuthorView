@@ -261,6 +261,12 @@ code {
 }
 
 /* login form */
+.login-page-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  border: 1px solid red;
+  height: 100vh;
+}
 .login-header {
   height: 30vh;
   display: flex;

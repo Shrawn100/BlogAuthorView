@@ -58,46 +58,47 @@ const LoginForm = () => {
   };
 
   return (
-    <>
-      <div className="login-header">
-        <h1>Author Login</h1>
+    <div className="login-page-container">
+      <div className="login-page-img"></div>
+      <div className="login-page-content">
+        <h1>Jump back into creativity</h1>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={username}
+            onChange={handleInputChange}
+          />
+
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+          />
+
+          <button type="submit">Login</button>
+          <button type="button" onClick={handleLogin}>
+            Login with Test User
+          </button>
+          {errors.length > 0 && (
+            <div>
+              <p>Errors:</p>
+              <ul>
+                {errors.map((error, index) => (
+                  <li key={index}>{error.msg}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {message && <p>{message}</p>}
+        </form>
       </div>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={username}
-          onChange={handleInputChange}
-        />
-
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={handleInputChange}
-        />
-
-        <button type="submit">Login</button>
-        <button type="button" onClick={handleLogin}>
-          Login with Test User
-        </button>
-        {errors.length > 0 && (
-          <div>
-            <p>Errors:</p>
-            <ul>
-              {errors.map((error, index) => (
-                <li key={index}>{error.msg}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-        {message && <p>{message}</p>}
-      </form>
-    </>
+    </div>
   );
 };
 
