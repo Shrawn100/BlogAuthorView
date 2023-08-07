@@ -61,45 +61,48 @@ const LoginForm = () => {
     <div className="login-page-container">
       <img
         className="login-page-img"
-        src="https://images.pexels.com/photos/358457/pexels-photo-358457.jpeg"
-        alt="Rainforest waterfall"
+        src="https://images.pexels.com/photos/2253818/pexels-photo-2253818.jpeg"
+        alt="Sky view of beach"
       ></img>
       <div className="login-page-content">
         <h1 className="login-header">Author Hub</h1>
         <form className="login-form" onSubmit={handleSubmit}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={handleInputChange}
-          />
+          <div className="input-container">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={handleInputChange}
+            />
+          </div>
 
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={handleInputChange}
-          />
+          <div className="input-container">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="login-page-btns">
+            <button type="submit">Submit</button>
+            <button type="button" onClick={handleLogin}>
+              Test User
+            </button>
+          </div>
 
-          <button type="submit">Login</button>
-          <button type="button" onClick={handleLogin}>
-            Login with Test User
-          </button>
           {errors.length > 0 && (
-            <div>
-              <p>Errors:</p>
-              <ul>
-                {errors.map((error, index) => (
-                  <li key={index}>{error.msg}</li>
-                ))}
-              </ul>
-            </div>
+            <ul className="errors-list-ul">
+              {errors.map((error, index) => (
+                <li key={index}>{error.msg}</li>
+              ))}
+            </ul>
           )}
-          {message && <p>{message}</p>}
+          {message && <p className="error-msg-p">{message}</p>}
         </form>
       </div>
     </div>
