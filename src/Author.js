@@ -135,6 +135,7 @@ const AuthorPage = () => {
                   Create a new blog
                 </button>
               </div>
+              <h1 className="your-blogs-title">Your Blogs</h1>
               <div className="article-container">
                 {blogs.map((blog) => (
                   <Link
