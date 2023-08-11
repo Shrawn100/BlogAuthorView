@@ -236,22 +236,24 @@ code {
 }
 .author-blog-container > button {
   border: none;
-  font-weight: bold;
   background-color: white;
   color: black;
-  font-size: 16px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 100;
 }
 .author-blog-container > button:hover {
   cursor: pointer;
-  transform: scale(0.975);
+  transform: scale(0.99);
 }
 .go-back {
   color: black;
+  font-size: 20px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 300;
 }
 .go-back:hover {
-  transform: scale(0.97);
+  transform: scale(0.99);
 }
 
 /* Delete Blog Confirmation */
