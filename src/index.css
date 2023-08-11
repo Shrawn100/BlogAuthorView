@@ -14,7 +14,6 @@ code {
 
 /* Blog View */
 .blog-container {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
 }
@@ -28,10 +27,12 @@ code {
 .blog-title {
   padding: 50px 0px 5px 0px;
   margin: 0;
-  font-family: "Acme";
+  font-family: "Roboto Flex";
+  font-size: 100px;
 }
 
 .blog-date {
+  font-family: "Roboto Flex";
   padding-bottom: 20px;
   margin: 0;
 }
@@ -43,8 +44,8 @@ code {
 }
 .blog-paragraph {
   margin-top: 40px;
-  line-height: 1.8;
-
+  line-height: 2;
+  font-size: 18px;
   padding: 10px 0px 10px 0px;
   margin: 0;
   word-wrap: break-word; /* Add this to allow long words to break */
@@ -316,7 +317,6 @@ code {
 .input-container {
   display: flex;
   gap: 10px;
-  width: ;
 }
 .input-container > label {
   margin-bottom: 5px;
