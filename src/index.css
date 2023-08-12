@@ -71,40 +71,69 @@ code {
 /* Authors blogs list view */
 
 .article-container {
-  margin-top: 20px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 20px 100px 30px 100px;
+  min-height: 80vh;
   gap: 30px;
   display: grid;
+  background-color: aliceblue;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 .your-blogs-title {
   text-align: center;
   font-size: 30px;
-  padding: 20px;
+  padding: 40px;
+  margin: 0;
+  background-color: aliceblue;
 }
 .blog-article-container {
   display: flex;
+  max-height: 650px;
+  border-radius: 0.5em;
   flex-direction: column;
   justify-content: space-between;
   text-decoration: none;
   color: black;
-
+  background-color: white;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
 }
 .blog-article-container:hover {
-  transform: scale(0.99);
+  transform: scale(0.995);
 }
 .article-image {
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
   width: 100%;
   object-fit: cover;
   max-height: 350px;
+}
+.add-circle-container {
+  max-height: 650px;
+  min-height: 550px;
+  box-sizing: border-box;
+  padding: 40px;
+  border-radius: 0.5em;
+  background-color: white;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+.add-circle-container:hover {
+  transform: scale(0.995);
+  cursor: pointer;
+}
+.add-circle {
+  display: flex;
+  justify-content: center;
+  font-size: 200px;
 }
 .blog-info {
   padding: 20px;
   display: flex;
   flex-direction: column;
-
+  line-height: 1.5;
   height: 100%;
   justify-content: space-around;
 }
@@ -170,6 +199,14 @@ code {
     padding: 4vw;
     padding-top: 0;
     gap: 2vh;
+  }
+  .add-circle-container {
+    width: 100%;
+  }
+  .add-circle {
+    display: flex;
+    justify-content: center;
+    font-size: 150px;
   }
 }
 /* Blog Form */

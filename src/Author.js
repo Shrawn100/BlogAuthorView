@@ -159,6 +159,14 @@ const AuthorPage = () => {
                     </div>
                   </Link>
                 ))}
+                <div
+                  onClick={handleCreateClick}
+                  className=" add-circle-container"
+                >
+                  <i className="material-icons  add-circle">add_circle</i>
+
+                  <h1 className="add-circle-heading">Create new blog</h1>
+                </div>
               </div>
             </>
           )}
