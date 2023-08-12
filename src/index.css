@@ -61,6 +61,11 @@ code {
   .blog-content {
     padding: 0px 25px 0px 25px;
   }
+
+  .blog-title {
+    font-size: 60px;
+    word-wrap: break-word;
+  }
 }
 
 /* Authors blogs list view */
@@ -77,7 +82,6 @@ code {
   text-align: center;
   font-size: 30px;
   padding: 20px;
-  text-decoration: underline;
 }
 .blog-article-container {
   display: flex;
@@ -337,6 +341,7 @@ code {
   width: 70vw;
   max-width: 400px;
   font-size: 18px;
+  border: 1px solid rgb(184, 184, 184);
 }
 .login-page-btns {
   display: flex;
