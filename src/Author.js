@@ -135,37 +135,39 @@ const AuthorPage = () => {
                   Create a new blog
                 </button>
               </div>
-              <h1 className="your-blogs-title">Your Blogs</h1>
-              <div className="article-container">
-                {blogs.map((blog) => (
-                  <Link
-                    className="blog-article-container"
-                    key={blog.id}
-                    to={`/author/${blog._id}`}
+              <div className="article-view-container">
+                <h1 className="your-blogs-title">Your Blogs</h1>
+                <div className="article-container">
+                  {blogs.map((blog) => (
+                    <Link
+                      className="blog-article-container"
+                      key={blog.id}
+                      to={`/author/${blog._id}`}
+                    >
+                      <img
+                        className="article-image"
+                        src={blog.image}
+                        alt={blog.alt}
+                      ></img>
+
+                      <div className="blog-info">
+                        <h1 className="blog-info-heading">{blog.title}</h1>
+                        <p className="blog-info-content">{blog.desc}</p>
+
+                        <p className="blog-info-date">
+                          {formatDate(blog.date)}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                  <div
+                    onClick={handleCreateClick}
+                    className=" add-circle-container"
                   >
-                    <img
-                      className="article-image"
-                      src={blog.image}
-                      alt={blog.alt}
-                    ></img>
+                    <i className="material-icons  add-circle">add_circle</i>
 
-                    <div className="blog-info">
-                      <h1 className="blog-info-heading">{blog.title}</h1>
-                      <p className="blog-info-content">{blog.desc}</p>
-
-                      <p className="blog-info-date">
-                        Published on: {formatDate(blog.date)}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-                <div
-                  onClick={handleCreateClick}
-                  className=" add-circle-container"
-                >
-                  <i className="material-icons  add-circle">add_circle</i>
-
-                  <h1 className="add-circle-heading">Create new blog</h1>
+                    <h1 className="add-circle-heading">Create new blog</h1>
+                  </div>
                 </div>
               </div>
             </>
