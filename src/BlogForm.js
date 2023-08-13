@@ -71,7 +71,7 @@ function BlogForm({
         onChange={(e) => setText(e.target.value)}
       ></textarea>
       <div className="form-select">
-        <label htmlFor="published">Published:</label>
+        <label htmlFor="published">Published</label>
         <input
           type="checkbox"
           id="published"

@@ -223,14 +223,16 @@ body {
 /* Blog Form */
 .blog-form-heading {
   text-align: center;
-  font-size: 22px;
+  font-size: 25px;
   margin-top: 30px;
+  border: 1px solid red;
 }
 .blog-form {
   display: flex;
   flex-direction: column;
   padding: 15px 50px 50px 50px;
   align-items: center;
+  border: 1px solid red;
 }
 .blog-form > label {
   margin-bottom: 5px;
@@ -250,7 +252,14 @@ body {
   padding: 10px;
   font-size: 15px;
   font-weight: bold;
+  background-color: rgba(40, 167, 69, 1);
 }
+
+.blog-form > button:hover {
+  cursor: pointer;
+  background-color: rgba(33, 137, 57, 1);
+}
+
 .blog-form > button:hover {
   cursor: pointer;
 }
@@ -258,7 +267,7 @@ body {
   padding: 10px;
   padding-left: 15px;
   width: 70vw;
-  max-width: 400px;
+
   min-height: 200px;
 }
 .blog-form > .form-select {
