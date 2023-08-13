@@ -137,8 +137,12 @@ function Blog() {
                 {confirmation ? (
                   <div className="delete-blog">
                     <h1>Are you sure?</h1>
-                    <button onClick={handleDelete}>Yes</button>
-                    <button onClick={handleDeleteClick}>No</button>
+                    <button className="yes" onClick={handleDelete}>
+                      Yes
+                    </button>
+                    <button className="no" onClick={handleDeleteClick}>
+                      No
+                    </button>
                   </div>
                 ) : (
                   <>

@@ -331,12 +331,16 @@ body {
   justify-content: center;
   height: 80vh;
 }
-
+.yes {
+  background-color: rgba(40, 167, 69, 1);
+}
 .delete-blog > button {
   width: 200px;
   padding: 10px;
   margin-bottom: 10px;
+  color: ;
 }
+
 .delete-blog > button:hover {
   cursor: pointer;
 }
