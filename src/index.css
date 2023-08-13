@@ -167,7 +167,7 @@ body {
   padding: 25px;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(201, 183, 162);
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .sign-out {
@@ -181,15 +181,12 @@ body {
   text-decoration: underline;
 }
 .create-btn {
-  width: 50vw;
   font-family: "Roboto Flex";
-  max-height: 400px;
-  max-width: 400px;
   font-size: 20px;
   font-weight: bold;
   border: none;
   color: white;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(201, 183, 162);
 }
 .create-btn:hover {
   text-decoration: underline;
@@ -253,6 +250,7 @@ body {
   font-size: 15px;
   font-weight: bold;
   background-color: rgba(40, 167, 69, 1);
+  border: none;
 }
 
 .blog-form > button:hover {
@@ -267,7 +265,7 @@ body {
   padding: 10px;
   padding-left: 15px;
   width: 70vw;
-
+  max-width: 400px;
   min-height: 200px;
 }
 .blog-form > .form-select {
@@ -291,35 +289,34 @@ body {
 .author-blog-container {
   display: flex;
   justify-content: center;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgb(85, 85, 85);
+  box-shadow: 0px 2px 5px rgba(201, 183, 162, 0.9);
+  border-bottom: 1px solid rgb(201, 183, 162);
   justify-content: space-around;
   padding: 25px;
   position: sticky;
   top: 0;
-  background-color: white;
+  background-color: rgb(201, 183, 162);
   z-index: 1;
 }
 .author-blog-container > button {
   border: none;
-  background-color: white;
-  color: black;
+  background-color: rgb(201, 183, 162);
+  color: white;
   font-size: 21px;
   text-decoration: none;
-  font-weight: 100;
 }
 .author-blog-container > button:hover {
   cursor: pointer;
-  transform: scale(0.99);
+  text-decoration: underline;
 }
 .go-back {
-  color: black;
+  color: white;
   font-size: 21px;
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 400;
 }
 .go-back:hover {
-  transform: scale(0.99);
+  text-decoration: underline;
 }
 
 /* Delete Blog Confirmation */
@@ -332,6 +329,9 @@ body {
   height: 80vh;
 }
 .yes {
+  background-color: rgb(214, 58, 58);
+}
+.no {
   background-color: rgba(40, 167, 69, 1);
 }
 .delete-blog > button {

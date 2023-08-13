@@ -132,7 +132,7 @@ const AuthorPage = () => {
                   Logout
                 </Link>
                 <button className="create-btn" onClick={handleCreateClick}>
-                  Create a new blog
+                  Create
                 </button>
               </div>
               <div className="article-view-container">
