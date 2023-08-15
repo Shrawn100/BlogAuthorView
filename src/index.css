@@ -90,7 +90,8 @@ body {
   font-size: 30px;
   padding: 40px;
   margin: 0;
-  color: rgb(201, 183, 162);
+  color: black;
+  font-family: "Unica One";
 }
 .blog-article-container {
   display: flex;
@@ -100,8 +101,8 @@ body {
   justify-content: space-between;
   text-decoration: none;
   color: black;
-  background-color: white;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+
+  border-bottom: 2px solid rgb(161, 161, 161);
 }
 .blog-article-container:hover {
   transform: scale(0.995);
@@ -114,16 +115,16 @@ body {
   max-height: 350px;
 }
 .add-circle-container {
+  font-family: "Unica One";
   max-height: 650px;
   min-height: 550px;
   box-sizing: border-box;
   padding: 40px;
   border-radius: 0.5em;
-  background-color: rgb(201, 183, 162);
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgb(161, 161, 161);
   display: flex;
   flex-direction: column;
-  color: white;
+  color: black;
   align-items: center;
   justify-content: center;
 }
@@ -135,7 +136,7 @@ body {
   display: flex;
   justify-content: center;
   font-size: 200px;
-  color: white;
+  color: black;
 }
 .blog-info {
   padding: 20px;
@@ -144,19 +145,15 @@ body {
   line-height: 1.5;
   height: 100%;
   justify-content: space-around;
-  color: white;
-  background-color: rgb(201, 183, 162);
 }
 .blog-info-heading {
-  color: white;
-
   font-size: 20px;
   text-decoration: none;
   margin: 0;
   margin-top: 20px;
   text-align: start;
   width: 100%;
-  font-family: "Roboto Flex";
+  font-family: "Unica One";
 }
 .blog-info-date {
   margin: 0;
@@ -167,25 +164,27 @@ body {
   padding: 25px;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 4px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgb(173, 173, 173);
   background-color: rgb(201, 183, 162);
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 }
 .sign-out {
-  font-size: 20px;
+  font-size: 21px;
   color: white;
   font-weight: bold;
   text-decoration: none;
-  font-family: "Roboto Flex";
+  font-family: "Unica One";
 }
 .sign-out:hover {
   text-decoration: underline;
 }
 .create-btn {
-  font-family: "Roboto Flex";
-  font-size: 20px;
+  font-family: "Unica One";
+  font-size: 21px;
+  color: white;
   font-weight: bold;
   border: none;
-  color: white;
   background-color: rgb(201, 183, 162);
 }
 .create-btn:hover {
@@ -287,13 +286,14 @@ body {
 .author-blog-container {
   display: flex;
   justify-content: center;
-  box-shadow: 0px 2px 5px rgba(201, 183, 162, 0.9);
-  border-bottom: 1px solid rgb(201, 183, 162);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgb(173, 173, 173);
+  background-color: rgb(201, 183, 162);
   justify-content: space-around;
   padding: 25px;
   position: sticky;
   top: 0;
-  background-color: rgb(201, 183, 162);
+
   z-index: 1;
 }
 .author-blog-container > button {
@@ -302,6 +302,8 @@ body {
   color: white;
   font-size: 21px;
   text-decoration: none;
+  font-weight: bold;
+  font-family: "Unica One";
 }
 .author-blog-container > button:hover {
   cursor: pointer;
@@ -311,7 +313,8 @@ body {
   color: white;
   font-size: 21px;
   text-decoration: none;
-  font-weight: 400;
+  font-family: "Unica One";
+  font-weight: bold;
 }
 .go-back:hover {
   text-decoration: underline;
