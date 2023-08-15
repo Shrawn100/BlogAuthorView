@@ -50,6 +50,7 @@ const AuthorPage = () => {
     setDesc("");
     setTitle("");
     setImgUrl("");
+    setAlt("");
     setText("");
     setPublished(false);
   }
@@ -107,19 +108,19 @@ const AuthorPage = () => {
         <>
           {createStatus ? (
             <>
-              <div className="btn-container">
-                <button className="create-btn" onClick={handleCreateClick}>
-                  Cancel
-                </button>
-                <button
-                  className="preview create-btn"
-                  onClick={handlePreviewClick}
-                >
-                  Preview
-                </button>
-              </div>
               {previewStatus ? (
                 <>
+                  <div className="btn-container">
+                    <button className="create-btn" onClick={handleCreateClick}>
+                      Cancel
+                    </button>
+                    <button
+                      className="preview create-btn"
+                      onClick={handlePreviewClick}
+                    >
+                      Hide Preview
+                    </button>
+                  </div>
                   <NewBlogView
                     title={title}
                     imgUrl={imgUrl}
@@ -129,6 +130,17 @@ const AuthorPage = () => {
                 </>
               ) : (
                 <>
+                  <div className="btn-container">
+                    <button className="create-btn" onClick={handleCreateClick}>
+                      Cancel
+                    </button>
+                    <button
+                      className="preview create-btn"
+                      onClick={handlePreviewClick}
+                    >
+                      Preview
+                    </button>
+                  </div>
                   <h1 className="blog-form-heading">Write a blog</h1>
                   <BlogForm
                     handleSubmit={handleSubmit}
