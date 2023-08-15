@@ -3,9 +3,14 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import BlogForm from "./BlogForm";
 import { useNavigate } from "react-router-dom";
+import MarkdownEditor from "./MarkedDown";
+import { marked } from "marked";
+import NewBlogView from "./NewBlogView";
 const AuthorPage = () => {
   const [blogs, setBlogs] = useState([]);
   const [createStatus, setCreateStatus] = useState(false);
+  const [previewStatus, setPreviewStatus] = useState(false);
+
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [imgUrl, setImgUrl] = useState("");
@@ -92,6 +97,9 @@ const AuthorPage = () => {
     );
     return formattedDate;
   };
+  const handlePreviewClick = () => {
+    setPreviewStatus(!previewStatus);
+  };
 
   return (
     <>
@@ -103,27 +111,45 @@ const AuthorPage = () => {
                 <button className="create-btn" onClick={handleCreateClick}>
                   Cancel
                 </button>
+                <button
+                  className="preview create-btn"
+                  onClick={handlePreviewClick}
+                >
+                  Preview
+                </button>
               </div>
-
-              <h1 className="blog-form-heading">Write a blog</h1>
-              <BlogForm
-                handleSubmit={handleSubmit}
-                title={title}
-                setTitle={setTitle}
-                desc={desc}
-                setDesc={setDesc}
-                imgUrl={imgUrl}
-                setImgUrl={setImgUrl}
-                alt={alt}
-                setAlt={setAlt}
-                text={text}
-                setText={setText}
-                published={published}
-                setPublished={setPublished}
-              ></BlogForm>
-              {errorArray.map((error) => (
-                <div>{error.msg}</div>
-              ))}
+              {previewStatus ? (
+                <>
+                  <NewBlogView
+                    title={title}
+                    imgUrl={imgUrl}
+                    content={text}
+                    alt={alt}
+                  />
+                </>
+              ) : (
+                <>
+                  <h1 className="blog-form-heading">Write a blog</h1>
+                  <BlogForm
+                    handleSubmit={handleSubmit}
+                    title={title}
+                    setTitle={setTitle}
+                    desc={desc}
+                    setDesc={setDesc}
+                    imgUrl={imgUrl}
+                    setImgUrl={setImgUrl}
+                    alt={alt}
+                    setAlt={setAlt}
+                    text={text}
+                    setText={setText}
+                    published={published}
+                    setPublished={setPublished}
+                  ></BlogForm>
+                  {errorArray.map((error) => (
+                    <div>{error.msg}</div>
+                  ))}
+                </>
+              )}
             </>
           ) : (
             <>

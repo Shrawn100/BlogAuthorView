@@ -1,4 +1,8 @@
 import he from "he";
+import React, { useState } from "react";
+import SimpleMDEEditor from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css"; // Import the editor's styles
+import { marked } from "marked";
 
 function BlogForm({
   handleSubmit,
@@ -31,7 +35,6 @@ function BlogForm({
         value={title ? title : ""}
         onChange={(e) => setTitle(e.target.value)}
       />
-
       <label htmlFor="desc">Description:</label>
       <input
         placeholder="This blogs talks about sports"
@@ -41,7 +44,6 @@ function BlogForm({
         value={desc ? desc : ""}
         onChange={(e) => setDesc(e.target.value)}
       />
-
       <label htmlFor="imgUrl">Image URL:</label>
       <input
         placeholder="www.image/soccerball.com"
@@ -51,7 +53,6 @@ function BlogForm({
         value={decodedUrl ? decodedUrl : ""}
         onChange={(e) => setImgUrl(e.target.value)}
       />
-
       <label htmlFor="alt">Image Alt:</label>
       <input
         placeholder="Soccer ball"
@@ -61,7 +62,6 @@ function BlogForm({
         value={alt ? alt : ""}
         onChange={(e) => setAlt(e.target.value)}
       />
-
       <label htmlFor="text">Content:</label>
       <textarea
         placeholder="Note: You can seperate content into paragraphs by using delimiter: %!P"
@@ -79,7 +79,6 @@ function BlogForm({
           onChange={(e) => setPublished(e.target.checked)}
         />
       </div>
-
       <button type="submit">Submit</button>
     </form>
   );
