@@ -10,7 +10,7 @@ function Blog() {
   const { id } = useParams();
   const [responseData, setResponseData] = useState(null);
   const [author, setAuthor] = useState(null);
-
+  const [previewStatus, setPreviewStatus] = useState(false);
   const [editStatus, setEditStatus] = useState(false);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -126,6 +126,9 @@ function Blog() {
       // Handle the error as needed
     }
   };
+  const handlePreviewClick = () => {
+    setPreviewStatus(!previewStatus);
+  };
 
   return (
     <>
@@ -146,29 +149,60 @@ function Blog() {
                   </div>
                 ) : (
                   <>
-                    <div className="author-blog-container">
-                      <button onClick={handleEditClick}>Cancel</button>
-                      <button onClick={handleDeleteClick}>Delete Blog</button>
-                    </div>
-                    <BlogForm
-                      handleSubmit={handleSubmit}
-                      title={title}
-                      setTitle={setTitle}
-                      desc={desc}
-                      setDesc={setDesc}
-                      imgUrl={imgUrl}
-                      setImgUrl={setImgUrl}
-                      alt={alt}
-                      setAlt={setAlt}
-                      text={text}
-                      setText={setText}
-                      published={published}
-                      setPublished={setPublished}
-                    ></BlogForm>
+                    {previewStatus ? (
+                      <>
+                        <div className="author-blog-container">
+                          <button onClick={handleEditClick}>Cancel</button>
+                          <button onClick={handlePreviewClick}>
+                            Hide Preview
+                          </button>
+                          <button onClick={handleDeleteClick}>
+                            Delete Blog
+                          </button>
+                        </div>
+                        <BlogView
+                          title={title}
+                          date={date}
+                          imgUrl={imgUrl}
+                          content={text}
+                          alt={alt}
+                          author={author}
+                        ></BlogView>
 
-                    {errorArray.map((error) => (
-                      <div>{error.msg}</div>
-                    ))}
+                        {errorArray.map((error) => (
+                          <div>{error.msg}</div>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        <div className="author-blog-container">
+                          <button onClick={handleEditClick}>Cancel</button>
+                          <button onClick={handlePreviewClick}>Preview</button>
+                          <button onClick={handleDeleteClick}>
+                            Delete Blog
+                          </button>
+                        </div>
+                        <BlogForm
+                          handleSubmit={handleSubmit}
+                          title={title}
+                          setTitle={setTitle}
+                          desc={desc}
+                          setDesc={setDesc}
+                          imgUrl={imgUrl}
+                          setImgUrl={setImgUrl}
+                          alt={alt}
+                          setAlt={setAlt}
+                          text={text}
+                          setText={setText}
+                          published={published}
+                          setPublished={setPublished}
+                        ></BlogForm>
+
+                        {errorArray.map((error) => (
+                          <div>{error.msg}</div>
+                        ))}
+                      </>
+                    )}
                   </>
                 )}
               </div>
