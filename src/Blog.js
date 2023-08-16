@@ -38,7 +38,7 @@ function Blog() {
             config
           );
           setResponseData(response.data);
-          setAuthor(response.data.blog.author._id);
+          setAuthor(response.data.blog.author.name);
           console.log(response.data);
           setTitle(response.data.blog.title);
           setDesc(response.data.blog.desc);
@@ -187,6 +187,7 @@ function Blog() {
                 imgUrl={imgUrl}
                 content={text}
                 alt={alt}
+                author={author}
               ></BlogView>
             </>
           )}

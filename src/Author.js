@@ -125,6 +125,7 @@ const AuthorPage = () => {
                     imgUrl={imgUrl}
                     content={text}
                     alt={alt}
+                    author={responseData[0].author.name}
                   />
                 </>
               ) : (

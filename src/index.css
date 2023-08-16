@@ -17,6 +17,7 @@ code {
   display: flex;
   justify-content: center;
 }
+
 .blog-content {
   display: flex;
   flex-direction: column;
@@ -29,6 +30,11 @@ code {
   margin: 0;
   font-family: "Roboto Flex";
   font-size: 100px;
+}
+.blog-author {
+  font-weight: bold;
+  font-family: "Roboto Flex";
+  font-size: 20px;
 }
 
 .blog-date {
