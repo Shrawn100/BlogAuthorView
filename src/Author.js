@@ -3,8 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import BlogForm from "./BlogForm";
 import { useNavigate } from "react-router-dom";
-import MarkdownEditor from "./MarkedDown";
-import { marked } from "marked";
+
 import NewBlogView from "./NewBlogView";
 const AuthorPage = () => {
   const [blogs, setBlogs] = useState([]);

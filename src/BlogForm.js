@@ -2,7 +2,6 @@ import he from "he";
 import React, { useState } from "react";
 import SimpleMDEEditor from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css"; // Import the editor's styles
-import { marked } from "marked";
 
 function BlogForm({
   handleSubmit,

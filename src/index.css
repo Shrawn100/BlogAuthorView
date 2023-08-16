@@ -42,8 +42,11 @@ code {
   max-height: 600px;
   margin-bottom: 50px;
 }
-.blog-paragraph {
-  margin-top: 40px;
+.blog-content-container {
+  padding: 10px 0px 10px 0px;
+  font-family: "Roboto Flex";
+}
+.blog-content-container > p {
   line-height: 2;
   font-size: 18px;
   padding: 10px 0px 10px 0px;
