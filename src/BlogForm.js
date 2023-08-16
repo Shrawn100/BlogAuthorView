@@ -63,7 +63,7 @@ function BlogForm({
       />
       <label htmlFor="text">Content:</label>
       <textarea
-        placeholder="Note: You can seperate content into paragraphs by using delimiter: %!P"
+        placeholder="Note: You can use MarkDown Syntax"
         required
         id="text"
         value={text ? text : ""}
