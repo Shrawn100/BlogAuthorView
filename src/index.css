@@ -117,7 +117,6 @@ body {
   transform: scale(0.995);
 }
 .article-image {
-  border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   width: 100%;
   object-fit: cover;
@@ -133,7 +132,6 @@ body {
   border-bottom: 2px solid rgb(161, 161, 161);
   display: flex;
   flex-direction: column;
-  color: black;
   align-items: center;
   justify-content: center;
 }
@@ -166,6 +164,7 @@ body {
 }
 .blog-info-date {
   margin: 0;
+  color: grey;
 }
 
 .btn-container {
@@ -176,11 +175,10 @@ body {
   margin-bottom: 4px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgb(173, 173, 173);
-  background-color: rgb(201, 183, 162);
 }
 .sign-out {
   font-size: 21px;
-  color: white;
+
   font-weight: bold;
   text-decoration: none;
   font-family: "Unica One";
@@ -191,10 +189,9 @@ body {
 .create-btn {
   font-family: "Unica One";
   font-size: 21px;
-  color: white;
+  background-color: white;
   font-weight: bold;
   border: none;
-  background-color: rgb(201, 183, 162);
 }
 .create-btn:hover {
   text-decoration: underline;
