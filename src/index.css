@@ -227,66 +227,99 @@ body {
   text-align: center;
   font-size: 25px;
   margin-top: 30px;
+  font-family: "Unica One";
 }
 .blog-form {
   display: flex;
   flex-direction: column;
-  padding: 15px 50px 50px 50px;
+  padding: 15px 30px 30px 30px;
   align-items: center;
-}
-.blog-form > label {
-  margin-bottom: 5px;
-  margin-top: 10px;
-  font-size: 20px;
+  box-sizing: border-box;
+
+  overflow: hidden;
 }
 
-.blog-form > input {
-  padding: 12px;
+.blog-form-section {
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  width: 100vw;
+  max-width: 950px;
+  gap: 15px;
+}
+.blog-form-section > label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  min-width: 120px;
+  font-size: 20px;
   text-align: center;
-  width: 70vw;
-  max-width: 400px;
-  font-size: 15px;
+  padding: 5px;
+}
+.blog-form-section > input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+.blog-form-section > textarea {
+  width: 100%;
+  font-size: 16px;
+  min-width: 50%;
+  padding: 10px;
+}
+
+.form-select {
+  width: 200px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  box-sizing: border-box;
+  max-width: 950px;
+}
+.form-select > input {
+  width: 100px;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.form-select > label {
+  font-size: 20px;
+  cursor: pointer;
 }
 .blog-form > button {
   width: 200px;
   padding: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  background-color: rgba(40, 167, 69, 1);
-  border: none;
-}
-
-.blog-form > button:hover {
-  cursor: pointer;
-  background-color: rgba(33, 137, 57, 1);
-}
-
-.blog-form > button:hover {
-  cursor: pointer;
-}
-.blog-form > textarea {
-  padding: 10px;
-  padding-left: 15px;
-  width: 70vw;
-  max-width: 400px;
-  min-height: 200px;
-}
-.blog-form > .form-select {
+  font-size: 18px;
+  background-color: rgb(33, 196, 33);
   margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-.form-select > input {
-  padding: 10px;
-  width: 25px;
-  height: 25px;
-}
-.form-select > input:hover {
+  border: 2px solid black;
   cursor: pointer;
+  border-radius: 3px;
+}
+.blog-form > button:hover {
+  background-color: green;
 }
 
+@media (max-width: 650px) {
+  .blog-form-section {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .blog-form-section > label {
+    border: none;
+  }
+  .blog-form-section > input {
+    width: 80%;
+  }
+  .blog-form-section > textarea {
+    width: 80%;
+  }
+}
 /* Author blog view */
 
 .author-blog-container {

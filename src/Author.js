@@ -141,7 +141,7 @@ const AuthorPage = () => {
                       Preview
                     </button>
                   </div>
-                  <h1 className="blog-form-heading">Write a blog</h1>
+                  <h1 className="blog-form-heading">New blog</h1>
                   <BlogForm
                     handleSubmit={handleSubmit}
                     title={title}

@@ -25,50 +25,50 @@ function BlogForm({
 
   return (
     <form className="blog-form" onSubmit={handleSubmit}>
-      <label htmlFor="title">Title:</label>
-      <input
-        placeholder="Why sports are exciting"
-        required
-        type="text"
-        id="title"
-        value={title ? title : ""}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <label htmlFor="desc">Description:</label>
-      <input
-        placeholder="This blogs talks about sports"
-        required
-        type="text"
-        id="desc"
-        value={desc ? desc : ""}
-        onChange={(e) => setDesc(e.target.value)}
-      />
-      <label htmlFor="imgUrl">Image URL:</label>
-      <input
-        placeholder="www.image/soccerball.com"
-        required
-        type="text"
-        id="imgUrl"
-        value={decodedUrl ? decodedUrl : ""}
-        onChange={(e) => setImgUrl(e.target.value)}
-      />
-      <label htmlFor="alt">Image Alt:</label>
-      <input
-        placeholder="Soccer ball"
-        required
-        type="text"
-        id="alt"
-        value={alt ? alt : ""}
-        onChange={(e) => setAlt(e.target.value)}
-      />
-      <label htmlFor="text">Content:</label>
-      <textarea
-        placeholder="Note: You can use MarkDown Syntax"
-        required
-        id="text"
-        value={text ? text : ""}
-        onChange={(e) => setText(e.target.value)}
-      ></textarea>
+      <div className="blog-form-section">
+        <label htmlFor="desc">Description</label>
+        <input
+          placeholder="Explore the enchanting waters of Maldives"
+          required
+          type="text"
+          id="desc"
+          value={desc ? desc : ""}
+          onChange={(e) => setDesc(e.target.value)}
+        />
+      </div>
+      <div className="blog-form-section">
+        <label htmlFor="imgUrl">Image URL</label>
+        <input
+          placeholder="www.image/maldives.com"
+          required
+          type="text"
+          id="imgUrl"
+          value={decodedUrl ? decodedUrl : ""}
+          onChange={(e) => setImgUrl(e.target.value)}
+        />
+      </div>
+      <div className="blog-form-section">
+        <label htmlFor="alt">Image Alt</label>
+        <input
+          placeholder="Maldives beaches"
+          required
+          type="text"
+          id="alt"
+          value={alt ? alt : ""}
+          onChange={(e) => setAlt(e.target.value)}
+        />
+      </div>
+      <div className="blog-form-section">
+        <label htmlFor="text">Content</label>
+        <textarea
+          rows="17"
+          placeholder="Note: You can use MarkDown Syntax"
+          required
+          id="text"
+          value={text ? text : ""}
+          onChange={(e) => setText(e.target.value)}
+        ></textarea>
+      </div>
       <div className="form-select">
         <label htmlFor="published">Published</label>
         <input
